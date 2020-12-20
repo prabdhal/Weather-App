@@ -11,5 +11,8 @@
     "url": "Weather_App"
   },
   "author": "Prabdeep Dhaliwal",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0"
+  }
 }
