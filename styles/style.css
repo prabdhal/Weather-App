@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.body {
+  text-align: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  font-family: 'Noto Sans', sans-serif;
+  height: 100vh;
+  background: #eee;
+}
+
+header {
+  margin: 100px 0 30px 0;
+}
+
+input {
+  height: 40px;
+  width: 300px;
+  outline: 0;
+  padding: 5px;
+  border-radius: 10px 0 10px 0;
+  border: 1px solid black;
+  border-bottom: 2px solid black;
+}
+
+input[type=text] {
+  font-size: 1rem;
+}
+
+.city {
+  font-size: 2rem;
+  line-height: 3rem;
+  font-weight: 600;
+}
+
+.date {
+  font-size: 0.8rem;
+}
+
+section {
+  margin: 50px 0;
+}
+
+.temp {
+  font-size: 6rem;
+  font-weight: bolder;
+  text-shadow: 3px 3px 3px black;
+}
+
+.weather {
+  font-style: italic;
+  font-size: 1.7rem;
+  line-height: 4rem;
+}
+
+.hi-low {
+  font-size: 1rem;
+}
+
+.sunny {
+  background: url("/imgs/Sunny.jpg") no-repeat;
+  background-size: cover;
+}
+
+.rain {
+  background: url("/imgs/Rainy.jpg") no-repeat;
+  background-size: cover;
+}
+
+.clouds {
+  background: url("/imgs/Cloudy.jpg") no-repeat;
+  background-size: cover;
+}
+
+.snow {
+  background: url("/imgs/Snowy.jpg") no-repeat;
+  background-size: cover;
+}
+
+.clear {
+  background: url("/imgs/Clear.jpg") no-repeat;
+  background-size: cover;
+}
+
+.misty {
+  background: url("/imgs/Misty.jpg") no-repeat;
+  background-size: cover;
+}
+
+.default {
+  background: #eee;
+  background-size: cover;
+}
+/*# sourceMappingURL=style.css.map */
