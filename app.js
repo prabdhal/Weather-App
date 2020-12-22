@@ -16,9 +16,8 @@ app.set('view engine', 'ejs');
 // Middleware 
 app.use(express.json());
 app.use(express.static('public'));
-app.use(express.urlencoded({  extended: false }));
+app.use(express.urlencoded({ extended: false }));
 
-//imperial & metric
 // Routes
 app.post('/weather', (req, res) => {
   const url = `${API_BASE_URL}weather?lat=${req.body.latitude}&lon=${req.body.longitude}&units=metric&appid=${WEATHER_API_KEY}`

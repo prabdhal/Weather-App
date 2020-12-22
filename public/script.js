@@ -63,6 +63,9 @@ searchBox.addListener('places_changed', () => {
       case 'Haze': 
         bg.classList.add('haze')
         break;
+      case 'Smoke': 
+        bg.classList.add('smoke')
+        break;
       default:
         bg.classList.add('default');
     }
@@ -122,5 +125,6 @@ function removeAllClassesFromBody() {
   bg.classList.remove('misty');
   bg.classList.remove('fog');
   bg.classList.remove('haze');
+  bg.classList.remove('smoke');
   bg.classList.remove('default');
 }
