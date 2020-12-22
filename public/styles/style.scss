@@ -5,7 +5,6 @@
 }
 
 body {
-  height: 100vh;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -15,26 +14,41 @@ body {
   align-content: center;
   justify-content: center;
   color: white;
+  background: url(/imgs/Background.jpg) no-repeat;
 }
 
-.bg {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background: linear-gradient(#0D85D8,#7AD7F0, #92DFF3);
-  z-index: -5;
-  opacity: 0.6;
-}
+// .bg {
+//   width: 100%;
+//   height: 100vh;
+//   position: absolute;
+//   background: linear-gradient(#0D85D8,#7AD7F0, #92DFF3);
+//   z-index: -5;
+//   opacity: 0.6;
+// }
 
 .content-bg {
+  width: 100%;
+  max-width: 600px;
   box-shadow: 2px 2px 5px black, -1px -1px 5px black;
   background: linear-gradient(#0D85D8,#55c9e9, #72d5ee);
-  padding: 50px 0 0 0;
+  padding: 50px 0;
+  justify-content: center;
+  margin: auto;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin: auto;
 }
 
 input {
   height: 40px;
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
   outline: 0;
   padding: 5px;
   border-radius: 10px 0 10px 0;
@@ -68,6 +82,7 @@ section {
 
 .temp {
   font-size: 6rem;
+  line-height: 6rem;
   font-weight: bolder;
   text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.658);
 }
@@ -89,22 +104,26 @@ section {
 .more-details {
   display: grid;
   width: 100%;
-  grid-template-rows: repeat(2, 50px);
-  grid-template-columns: repeat(3, 150px);
+  max-width: 500px;
+  grid-template-rows: repeat(2, minmax(50px,1fr));
+  grid-template-columns: repeat(3, minmax(150px,1fr));
   grid-gap: 20px;
+  margin: auto;
+  padding: 20px 0;
+  justify-content: center;
   align-content: center;
   align-items: center;
-  text-align: left;
-  margin-left: 100px;
+  text-align: center;
 }
 
 .detail-title {
-  font-size: 0.8rem;;
+  font-size: 0.8rem;
+  text-align: center;
 }
 
 .details {
   font-size: 1.5rem;
-  text-align: left;
+  text-align: center;
 }
 
 
@@ -158,4 +177,19 @@ section {
 .default {
   background: linear-gradient(#0D85D8,#7AD7F0, #92DFF3);
   background-size: cover;
+}
+
+@media only screen and (max-width: 550px) {
+  .more-details {
+    grid-template-rows: repeat(3, 50px);
+    grid-template-columns: repeat(2, 150px);
+    grid-gap: 10px;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .more-details {
+    grid-template-rows: repeat(6, 50px);
+    grid-template-columns: repeat(1, 150px);
+  }
 }

@@ -9,7 +9,6 @@ const temp = document.querySelector('.temp');
 const weatherElement = document.querySelector('.weather'); 
 const weatherIcon = document.querySelector('.weather-icon');
 const hiLow = document.querySelector('.hi-low');
-const timezone = document.querySelector('.timezone');
 const feelsLike = document.querySelector('.feels-like');
 const windSpeed = document.querySelector('.wind-speed');
 const humidity = document.querySelector('.humidity');
@@ -35,41 +34,7 @@ searchBox.addListener('places_changed', () => {
   }).then(res => res.json())
     .catch(err => { console.log(err); })
     .then(data => { setWeatherData(data, place.formatted_address) })
-    .catch(err => { console.log(err); })
-    .then(() => {
-      removeAllClassesFromBody();
-      switch (weatherElement.textContent) {
-      case 'Sunny': 
-        bg.classList.add('sunny')
-        break;
-      case 'Clouds': 
-        bg.classList.add('clouds')
-        break;
-      case 'Rain': 
-        bg.classList.add('rain')
-        break;
-      case 'Snow': 
-        bg.classList.add('snow')
-        break;
-      case 'Clear': 
-        bg.classList.add('clear')
-        break;
-      case 'Mist': 
-        bg.classList.add('misty')
-        break;
-      case 'Fog': 
-        bg.classList.add('fog')
-        break;
-      case 'Haze': 
-        bg.classList.add('haze')
-        break;
-      case 'Smoke': 
-        bg.classList.add('smoke')
-        break;
-      default:
-        bg.classList.add('default');
-    }
-  });
+    .catch(err => { console.log(err); })  
 });
 
 function setWeatherData(data, place) {
@@ -80,7 +45,6 @@ function setWeatherData(data, place) {
   weatherElement.textContent = data.weather[0].main;
   hiLow.textContent = `${Math.round(data.main.temp_min)}°c / 
   ${Math.round(data.main.temp_max)}°c`
-  timezone.textContent = `${toDateTime(data.timezone)}`
   feelsLike.textContent = `${data.main.feels_like}°c`
   windSpeed.textContent = `${data.wind.speed} km/h`;
   humidity.textContent = `${data.main.humidity}%`;
@@ -106,7 +70,12 @@ function renderDateFormat(d) {
 
 function renderTimeFormat(d) {
   let hour = d.getHours();
-  let min = d.getMinutes();
+  let min =  d.getMinutes();
+
+  if (min <= 9) {
+    min = "0" + min;
+    console.log(min);
+  }
 
   return `${hour}:${min}`;
 }
